@@ -15,7 +15,7 @@ AForm::AForm() : name("Danino") , is_signed(0) , r_sign_grade(15), r_execute_gra
         throw AForm::GradeTooHighException();
 
 }
-std::string AForm::get_Name() 
+std::string AForm::get_Name()  const
 {
     return this->name;
 }

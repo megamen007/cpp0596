@@ -56,7 +56,7 @@ public:
 
     // Getters
 
-    std::string get_Name();
+    std::string get_Name() const ;
     bool get_sign_status()const;
     int get_r_sign_grade();
     int get_r_execute_grade() const;

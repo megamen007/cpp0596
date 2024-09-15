@@ -2,11 +2,11 @@ CC = c++
 
 CPPFLAGS = -Wall -Wextra -Werror -std=c++98
 
-SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp
+SRC = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-NAME = cpp_5_ex01
+NAME = cpp_5_ex02
 
 all: $(NAME)
 

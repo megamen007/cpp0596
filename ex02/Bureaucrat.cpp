@@ -37,7 +37,7 @@ int Bureaucrat::getGrade() const
     return this->grade;
 }
 
-std::string Bureaucrat::getName()
+std::string Bureaucrat::getName() const
 {
     return this->name;
 }
@@ -72,3 +72,18 @@ std::ostream& operator<<(std::ostream &outy , Bureaucrat & boss)
 
     return outy;
 }
+
+void Bureaucrat::executeForm(AForm const & form) const
+{
+    try
+    {
+        form.execute(*this);
+        std::cout << this->getName() << " executed " << form.get_Name() << std::endl;
+    }
+    catch(const std::exception& e)
+    {
+       std::cout << this->getName() << " couldn't execute " << form.get_Name() << " because "  << e.what() << std::endl;
+    }
+    
+}
+

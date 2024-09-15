@@ -26,7 +26,7 @@ class Bureaucrat
     // Getters :
 
     int getGrade() const;
-    std::string getName();
+    std::string getName() const;
 
     // Member Functions :
 
@@ -54,6 +54,8 @@ class Bureaucrat
             };
             
     };
+
+    void executeForm(AForm const & form) const;
 
 
 };

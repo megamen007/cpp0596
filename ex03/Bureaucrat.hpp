@@ -1,3 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/17 01:49:13 by mboudrio          #+#    #+#             */
+/*   Updated: 2024/09/17 02:42:12 by mboudrio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
+
 #ifndef BUREAUCRAT_HPP
 #define BUREAUCRAT_HPP
 
@@ -14,7 +29,7 @@ class AForm;
 class Bureaucrat
 {
     private:
-    std::string name;
+    const std::string name;
     int grade;
 
     public:
@@ -38,7 +53,7 @@ class Bureaucrat
     class GradeTooHighException : public std::exception
     {
         public:
-            const char *what() 
+            const char *what() const throw()
             {
                 return "Grade Too High !!!!";
             };
@@ -48,7 +63,7 @@ class Bureaucrat
     class GradeTooLowException : public std::exception
     {
         public:
-            const char *what()
+            const char *what() const throw()
             {
                 return "Grade Too Low !!!!";
             };

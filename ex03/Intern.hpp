@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Intern.hpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/17 01:49:30 by mboudrio          #+#    #+#             */
+/*   Updated: 2024/09/17 05:33:14 by mboudrio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #ifndef INTERN_HPP
 #define INTERN_HPP
 
@@ -10,21 +24,19 @@
 #include "RobotomyRequestForm.hpp"
 
 class Intern 
-{
-private:
-    typedef AForm* (*formCreationfunctions)(std::string target);
-    static AForm* CreatShrubberyForm(std::string target);
-    static AForm* CreatRobotomyForm(std::string target);
-    static AForm* CreatPresidentialForm(std::string target);
-    
-public:
-    Intern();
-    Intern(const Intern& newIntern);
-    Intern& operator=(const Intern& newIntern);
-    ~Intern();
+{    
+    public:
+        Intern();
+        Intern(const Intern& newIntern);
+        Intern& operator=(const Intern& newIntern);
+        ~Intern();
+        class FormDoesNotExistException: public std::exception{
+		    public:
+			    virtual const char *what() const throw();
+	    };
 
-    // Member functions
-    AForm* makeform(std::string Formname, std::string Formtarget);
+        // Member functions
+        AForm* makeForm(std::string Formname, std::string Formtarget);
 
 };
 

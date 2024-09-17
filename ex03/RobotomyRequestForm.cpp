@@ -1,7 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/17 01:49:58 by mboudrio          #+#    #+#             */
+/*   Updated: 2024/09/17 04:54:23 by mboudrio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include "RobotomyRequestForm.hpp"
 #include "AForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", false, 72, 45), target(target)
+RobotomyRequestForm::RobotomyRequestForm(std::string target) : AForm("RobotomyRequestForm", 72, 45), target(target)
 {
 }
 
@@ -9,17 +23,8 @@ RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &newS) : AFor
 {
 }
 
-RobotomyRequestForm::RobotomyRequestForm()
+RobotomyRequestForm::RobotomyRequestForm() : AForm("RobotomyRequestForm", 72, 45), target("default ")
 {
-}
-RobotomyRequestForm::RobotomyRequestForm(std::string name, bool is_signed , const int r_sign_grade , const int r_execute_grade)
-{
-(void) name;
-(void) is_signed;
-(void) r_sign_grade;
-(void) r_execute_grade;
-
-
 }
 
 RobotomyRequestForm &RobotomyRequestForm::operator=(const RobotomyRequestForm &newS)

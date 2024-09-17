@@ -1,7 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/17 01:48:42 by mboudrio          #+#    #+#             */
+/*   Updated: 2024/09/17 04:34:31 by mboudrio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include "ShrubberyCreationForm.hpp"
 #include "AForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm", false, 145, 137), target(target)
+ShrubberyCreationForm::ShrubberyCreationForm(std::string target) : AForm("ShrubberyCreationForm",  145, 137), target(target)
 {
 }
 
@@ -9,17 +23,8 @@ ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &newS) 
 {
 }
 
-ShrubberyCreationForm::ShrubberyCreationForm()
+ShrubberyCreationForm::ShrubberyCreationForm() : AForm("ShrubberyCreationForm",  145, 137), target("default")
 {
-}
-ShrubberyCreationForm::ShrubberyCreationForm(std::string name, bool is_signed , const int r_sign_grade , const int r_execute_grade)
-{
-(void) name;
-(void) is_signed;
-(void) r_sign_grade;
-(void) r_execute_grade;
-
-
 }
 
 ShrubberyCreationForm &ShrubberyCreationForm::operator=(const ShrubberyCreationForm &newS)
@@ -53,6 +58,7 @@ void ShrubberyCreationForm::execute(Bureaucrat const &executor) const
         std::cerr << "Error creating Your Tree File !!" << std::endl;
         return;
     }
+    
     out << "        *    " << std::endl;
     out << "       ***   " << std::endl;
     out << "      *****  " << std::endl;

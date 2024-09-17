@@ -1,3 +1,18 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/17 01:48:49 by mboudrio          #+#    #+#             */
+/*   Updated: 2024/09/17 04:33:19 by mboudrio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
+
 #ifndef ShrubberyCreationForm_HPP
 #define ShrubberyCreationForm_HPP
 
@@ -12,8 +27,8 @@ class ShrubberyCreationForm : public AForm
     private:
         std::string target;
     public:
+    
         ShrubberyCreationForm();
-        ShrubberyCreationForm(std::string name, bool is_signed , const int r_sign_grade , const int r_execute_grade);
         ShrubberyCreationForm(std::string target);
         ShrubberyCreationForm( const ShrubberyCreationForm  &newS);
         ShrubberyCreationForm& operator=( const ShrubberyCreationForm  &newS);

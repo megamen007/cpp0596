@@ -1,7 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/17 01:49:48 by mboudrio          #+#    #+#             */
+/*   Updated: 2024/09/17 04:53:24 by mboudrio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include "PresidentialPardonForm.hpp"
 #include "AForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", false, 25, 5), target(target)
+PresidentialPardonForm::PresidentialPardonForm(std::string target) : AForm("PresidentialPardonForm", 25, 5), target(target)
 {
 }
 
@@ -9,17 +23,8 @@ PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &new
 {
 }
 
-PresidentialPardonForm::PresidentialPardonForm()
+PresidentialPardonForm::PresidentialPardonForm() : AForm("PresidentialPardonForm" , 25 , 5 ) , target("default") 
 {
-}
-PresidentialPardonForm::PresidentialPardonForm(std::string name, bool is_signed , const int r_sign_grade , const int r_execute_grade)
-{
-(void) name;
-(void) is_signed;
-(void) r_sign_grade;
-(void) r_execute_grade;
-
-
 }
 
 PresidentialPardonForm &PresidentialPardonForm::operator=(const PresidentialPardonForm &newS)

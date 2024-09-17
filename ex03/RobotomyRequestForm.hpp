@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/17 01:50:03 by mboudrio          #+#    #+#             */
+/*   Updated: 2024/09/17 04:54:48 by mboudrio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #ifndef RobotomyRequestForm_HPP
 #define RobotomyRequestForm_HPP
 
@@ -15,7 +29,6 @@ class RobotomyRequestForm : public AForm
         std::string target;
     public:
         RobotomyRequestForm();
-        RobotomyRequestForm(std::string name, bool is_signed , const int r_sign_grade , const int r_execute_grade);
         RobotomyRequestForm(std::string target);
         RobotomyRequestForm( const RobotomyRequestForm  &newS);
         RobotomyRequestForm& operator=( const RobotomyRequestForm  &newS);

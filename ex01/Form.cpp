@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Form.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/17 01:47:14 by mboudrio          #+#    #+#             */
+/*   Updated: 2024/09/17 04:15:07 by mboudrio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include "Form.hpp"
 
 Form::Form() : name("Danino") , is_signed(0) , r_sign_grade(15), r_execute_grade(12)
@@ -15,6 +29,20 @@ Form::Form() : name("Danino") , is_signed(0) , r_sign_grade(15), r_execute_grade
         throw Form::GradeTooHighException();
 
 }
+
+Form::Form(std::string name, int grade_to_sign, int grade_to_exec): name(name), is_signed(0), r_sign_grade(grade_to_sign), r_execute_grade(grade_to_exec){
+    if ( r_execute_grade > 150 )
+        throw Form::GradeTooLowException();
+
+    if ( r_execute_grade < 1)
+        throw Form::GradeTooHighException();
+
+    if ( r_sign_grade > 150 )
+        throw Form::GradeTooLowException();
+
+    if ( r_sign_grade < 1)
+        throw Form::GradeTooHighException();
+}
 std::string Form::get_Name() 
 {
     return this->name;
@@ -25,15 +53,12 @@ Form& Form::operator=(const Form& newForm)
     {
 
     this->is_signed = newForm.is_signed;
-    this->name = newForm.name;
-
     }
     return *this;
 }
 
-Form::Form(const Form& newForm) : r_sign_grade(newForm.r_sign_grade) , r_execute_grade(newForm.r_execute_grade) 
+Form::Form(const Form& newForm) :  name(newForm.name) , r_sign_grade(newForm.r_sign_grade) , r_execute_grade(newForm.r_execute_grade) 
 {
-    name = newForm.name;
     is_signed = newForm.is_signed; 
 }
 

@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/17 01:48:02 by mboudrio          #+#    #+#             */
+/*   Updated: 2024/09/17 04:46:18 by mboudrio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include "Bureaucrat.hpp"
 #include "ShrubberyCreationForm.hpp"
 #include "AForm.hpp"
@@ -6,20 +20,24 @@
 
 int main()
 {
-    Bureaucrat  Z("John", 10);
-    ShrubberyCreationForm D("Home");
+    Bureaucrat  Z("John", 2);
+    ShrubberyCreationForm D("RRR");
     RobotomyRequestForm R("BOB");
     PresidentialPardonForm P("SALAH");
+    
     try
     {
         D.besigned(Z);
         D.execute(Z);
+        //Z.executeForm(D);
         
         R.besigned(Z);
         R.execute(Z);
+        //Z.executeForm(R);
 
         P.besigned(Z);
         P.execute(Z);
+        //Z.executeForm(P);
     }
     
 

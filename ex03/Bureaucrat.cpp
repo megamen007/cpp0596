@@ -1,3 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/17 01:49:07 by mboudrio          #+#    #+#             */
+/*   Updated: 2024/09/17 02:35:18 by mboudrio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
 
 #include "Bureaucrat.hpp"
 
@@ -12,9 +25,8 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name) , grade(grade)
 
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& newBureacrat)
+Bureaucrat::Bureaucrat(const Bureaucrat& newBureacrat) : name( newBureacrat.name )
 {
-    name = newBureacrat.name;
     grade = newBureacrat.grade;
 }
 
@@ -23,7 +35,6 @@ Bureaucrat& Bureaucrat::operator=(const Bureaucrat& newBureacrat)
     if ( this != &newBureacrat)
     {
         this->grade = newBureacrat.grade;
-        this->name = newBureacrat.name;
     }
     return *this;
 }

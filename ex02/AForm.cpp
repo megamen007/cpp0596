@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   AForm.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/17 01:47:40 by mboudrio          #+#    #+#             */
+/*   Updated: 2024/09/17 04:29:32 by mboudrio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #include "AForm.hpp"
 
 AForm::AForm() : name("Danino") , is_signed(0) , r_sign_grade(15), r_execute_grade(12)
@@ -23,17 +37,13 @@ AForm& AForm::operator=(const AForm& newAForm)
 {
     if(this != &newAForm)
     {
-
-    this->is_signed = newAForm.is_signed;
-    this->name = newAForm.name;
-
+        this->is_signed = newAForm.is_signed;
     }
     return *this;
 }
 
-AForm::AForm(const AForm& newAForm) : r_sign_grade(newAForm.r_sign_grade) , r_execute_grade(newAForm.r_execute_grade) 
+AForm::AForm(const AForm& newAForm) : name(newAForm.name) , r_sign_grade(newAForm.r_sign_grade) , r_execute_grade(newAForm.r_execute_grade) 
 {
-    name = newAForm.name;
     is_signed = newAForm.is_signed; 
 }
 
@@ -61,16 +71,8 @@ std::ostream & operator<<(std::ostream &outy ,AForm & newForm)
     return outy;
 }
 
-AForm::AForm(std::string name, bool is_signed , const int r_sign_grade , const int r_execute_grade) : name("Danino") , is_signed(0) , r_sign_grade(15), r_execute_grade(12)
+AForm::AForm(std::string _name, const int _r_sign_grade , const int _r_execute_grade) : name(_name) , is_signed(false) , r_sign_grade(_r_sign_grade), r_execute_grade(_r_execute_grade)
 {
-    (void) name;
-        (void) is_signed;
-
-    (void) r_sign_grade;
-    (void) r_execute_grade;
-
-
-
 }
 
 

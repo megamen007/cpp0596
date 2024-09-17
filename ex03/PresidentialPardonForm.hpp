@@ -1,3 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   PresidentialPardonForm.hpp                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/17 01:49:54 by mboudrio          #+#    #+#             */
+/*   Updated: 2024/09/17 04:54:51 by mboudrio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+
+
 #ifndef PresidentialPardonForm_HPP
 #define PresidentialPardonForm_HPP
 
@@ -13,7 +27,6 @@ class PresidentialPardonForm : public AForm
         std::string target;
     public:
         PresidentialPardonForm();
-        PresidentialPardonForm(std::string name, bool is_signed , const int r_sign_grade , const int r_execute_grade);
         PresidentialPardonForm(std::string target);
         PresidentialPardonForm( const PresidentialPardonForm  &newS);
         PresidentialPardonForm& operator=( const PresidentialPardonForm  &newS);

@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mboudrio <mboudrio@student.1337.ma>        +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/17 01:46:39 by mboudrio          #+#    #+#             */
+/*   Updated: 2024/09/17 03:54:56 by mboudrio         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 
 #include "Bureaucrat.hpp"
 
@@ -12,18 +24,15 @@ Bureaucrat::Bureaucrat(std::string name, int grade) : name(name) , grade(grade)
 
 }
 
-Bureaucrat::Bureaucrat(const Bureaucrat& newBureacrat)
+Bureaucrat::Bureaucrat(const Bureaucrat& newBureacrat) :  name( newBureacrat.name ) , grade ( newBureacrat.grade)
 {
-    name = newBureacrat.name;
-    grade = newBureacrat.grade;
 }
 
 Bureaucrat& Bureaucrat::operator=(const Bureaucrat& newBureacrat)
 {
     if ( this != &newBureacrat)
     {
-        this->grade = newBureacrat.grade;
-        this->name = newBureacrat.name;
+        *this = newBureacrat;
     }
     return *this;
 }
@@ -52,7 +61,7 @@ void  Bureaucrat::grade_decrement()
 
 void  Bureaucrat::grade_increment()
 {
-    this->grade--;
+    this->grade--; 
     if (grade < 1)
         throw Bureaucrat::GradeTooHighException();
 }
